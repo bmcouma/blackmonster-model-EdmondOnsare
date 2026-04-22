@@ -153,7 +153,7 @@ const navObserver = new IntersectionObserver(
 
 sections.forEach((section) => navObserver.observe(section));
 
-const roleText = "Model | Model Judge | Event Organizer | Trainer AND TEAM BUILDER";
+const roleText = "Model | Model Judge | Event Organizer | Trainer & Team Builder";
 let roleIdx = 0;
 let deleting = false;
 
@@ -180,4 +180,38 @@ function typeRoleLoop() {
 if (typedRole) {
   typedRole.textContent = "";
   typeRoleLoop();
+}
+
+
+// HERO SLIDER LOGIC
+const slides = document.querySelectorAll(".hero-bg");
+let currentSlide = 0;
+if(slides.length > 0) {
+  setInterval(() => {
+    slides[currentSlide].classList.remove("active");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("active");
+  }, 4000);
+}
+
+// AUTO COUNTER LOGIC
+const countEls = document.querySelectorAll('.auto-count');
+if (countEls.length > 0) {
+    const ob = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if(e.isIntersecting) {
+                const el = e.target;
+                const target = +el.getAttribute('data-target');
+                let count = 0;
+                let inc = Math.ceil(target / 40);
+                let timer = setInterval(() => {
+                    count += inc;
+                    if(count >= target) { el.innerText = target; clearInterval(timer); }
+                    else { el.innerText = count; }
+                }, 40);
+                ob.unobserve(el);
+            }
+        });
+    });
+    countEls.forEach(el => ob.observe(el));
 }
