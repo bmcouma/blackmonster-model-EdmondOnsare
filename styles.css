@@ -1097,20 +1097,17 @@ img { max-width: 100%; object-fit: cover; }
     object-fit: cover;
 }
 
+
 /* ELITE EXPERTISE CARDS */
-
 .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
-@media(max-width: 768px) {
-    .expertise-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 .expertise-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
     background: #000;
     border-radius: 12px;
     overflow: hidden;
@@ -1124,29 +1121,48 @@ img { max-width: 100%; object-fit: cover; }
     border-color: rgba(214, 185, 106, 0.6);
 }
 .expertise-img {
-    width: 100%;
-    height: 250px;
+    width: 40%;
+    min-height: 280px;
     object-fit: cover;
     filter: brightness(0.8) sepia(10%);
+    transition: filter 0.4s ease;
 }
 .expertise-card:hover .expertise-img {
     filter: brightness(1) sepia(0%);
 }
 .expertise-content {
-    padding: 1.5rem;
+    width: 60%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .expertise-content h3 {
     color: var(--gold);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 .expertise-content p {
     color: var(--muted);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+@media(max-width: 900px) {
+    .expertise-card {
+        flex-direction: column;
+    }
+    .expertise-img {
+        width: 100%;
+        min-height: 220px;
+    }
+    .expertise-content {
+        width: 100%;
+        padding: 2rem;
+    }
 }
 
 /* PREMIUM SCANNABLE ACHIEVEMENTS */
+
 .styled-lists {
     display: flex;
     flex-direction: column;
