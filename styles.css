@@ -1098,16 +1098,19 @@ img { max-width: 100%; object-fit: cover; }
 }
 
 
+
 /* ELITE EXPERTISE CARDS */
 .expertise-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media(max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
 }
 .expertise-card {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
     background: #000;
     border-radius: 12px;
     overflow: hidden;
@@ -1121,8 +1124,8 @@ img { max-width: 100%; object-fit: cover; }
     border-color: rgba(214, 185, 106, 0.6);
 }
 .expertise-img {
-    width: 40%;
-    min-height: 280px;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
     filter: brightness(0.8) sepia(10%);
     transition: filter 0.4s ease;
@@ -1131,37 +1134,21 @@ img { max-width: 100%; object-fit: cover; }
     filter: brightness(1) sepia(0%);
 }
 .expertise-content {
-    width: 60%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 1.5rem;
 }
 .expertise-content h3 {
     color: var(--gold);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
 }
 .expertise-content p {
     color: var(--muted);
-    font-size: 1.05rem;
-    line-height: 1.6;
-}
-@media(max-width: 900px) {
-    .expertise-card {
-        flex-direction: column;
-    }
-    .expertise-img {
-        width: 100%;
-        min-height: 220px;
-    }
-    .expertise-content {
-        width: 100%;
-        padding: 2rem;
-    }
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 /* PREMIUM SCANNABLE ACHIEVEMENTS */
+
 
 .styled-lists {
     display: flex;
