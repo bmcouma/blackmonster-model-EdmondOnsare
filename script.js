@@ -258,3 +258,24 @@ gTracks.forEach(t => {
         t.resumeTimer = setTimeout(() => { gPaused = false; }, 1000);
     });
 });
+
+// MOBILE NAV TOGGLE
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const siteNav = document.querySelector('.site-nav');
+const navLinksAll = document.querySelectorAll('.site-nav a');
+
+if (mobileToggle && siteNav) {
+    mobileToggle.addEventListener('click', () => {
+        mobileToggle.classList.toggle('is-active');
+        siteNav.classList.toggle('is-open');
+        document.body.style.overflow = siteNav.classList.contains('is-open') ? 'hidden' : '';
+    });
+
+    navLinksAll.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileToggle.classList.remove('is-active');
+            siteNav.classList.remove('is-open');
+            document.body.style.overflow = '';
+        });
+    });
+}
