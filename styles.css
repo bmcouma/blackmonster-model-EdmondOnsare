@@ -606,11 +606,18 @@ h3 {
 .service-bg-4 { background-image: url("assets/pictures/TEAM  BUILDING/DSC_8030.jpg"); background-size: cover; background-position: center; }
 .service-bg-5 { background-image: url("assets/pictures/TEAM  BUILDING/DSC00683.jpg"); background-size: cover; background-position: center; }
 
+
 .expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
 }
+@media(max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 .expertise-card {
   border: 1px solid var(--line);
@@ -792,23 +799,18 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .expertise-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .brand-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .achievement-grid,
-  .services-grid {
+  
+.expertise-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .event-item {
-    grid-template-columns: 1fr;
-  }
+    gap: 2rem;
 }
+@media(max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 @media (max-width: 680px) {
   .section {
@@ -1096,11 +1098,18 @@ img { max-width: 100%; object-fit: cover; }
 }
 
 /* ELITE EXPERTISE CARDS */
+
 .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
+@media(max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .expertise-card {
     background: #000;
     border-radius: 12px;
