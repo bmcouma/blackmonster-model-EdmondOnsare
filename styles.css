@@ -909,3 +909,87 @@ img { max-width: 100%; object-fit: cover; }
     filter: brightness(1.1);
     transform: scale(1.05);
 }
+
+/* ELITE GALLERY TWEAKS */
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    background: #000;
+}
+.gallery-card:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 0 25px 50px rgba(214, 185, 106, 0.35);
+    z-index: 10;
+}
+.gallery-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.5s ease;
+    pointer-events: none;
+    z-index: 5;
+}
+.gallery-card:hover::after {
+    border-color: rgba(214, 185, 106, 0.7);
+}
+
+/* PRO TESTIMONIAL CAROUSEL */
+.testimonial-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+}
+.testimonial-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll-tests 20s linear infinite;
+    width: max-content;
+}
+.testimonial-track:hover {
+    animation-play-state: paused;
+}
+.testimonial-card-pro {
+    background: rgba(14, 22, 17, 0.9);
+    border: 1px solid rgba(214, 185, 106, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.testimonial-card-pro:hover {
+    transform: translateY(-5px);
+    border-color: rgba(214, 185, 106, 0.6);
+}
+.testimonial-card-pro blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+.testimonial-card-pro .author {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-align: right;
+}
+@keyframes scroll-tests {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-400px * 2 - 4rem)); /* Shifts by two cards to loop */ }
+}
+@media(max-width: 768px) {
+    .testimonial-track { animation: scroll-tests 15s linear infinite; }
+    .testimonial-card-pro { width: 300px; padding: 1.5rem; }
+    @keyframes scroll-tests {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-300px * 2 - 4rem)); }
+    }
+}
