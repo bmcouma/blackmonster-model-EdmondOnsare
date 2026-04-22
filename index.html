@@ -35,18 +35,20 @@
 
   <main>
     <section id="hero" class="hero">
-      <img
-        src="assets/pictures/RUNWAY/DSC_9806.jpg"
-        alt="Edmond Onsare hero portrait"
-        class="hero-bg"
-        loading="eager"
-      >
+      
+    <div class="hero-slider">
+      <img src="assets/pictures/RUNWAY/DSC_9806.jpg" class="hero-bg active" alt="Slide 1">
+      <img src="assets/pictures/FASHION CAMPAIGN/DSC_2034.jpg" class="hero-bg" alt="Slide 2">
+      <img src="assets/pictures/AWARDS'/DSC_1712.jpg" class="hero-bg" alt="Slide 3">
+      <img src="assets/pictures/JUDGING EVENT/DSC_9524.jpg" class="hero-bg" alt="Slide 4">
+    </div>
+    
       <div class="hero-overlay"></div>
       <div class="hero-content reveal reveal-up">
         <p class="kicker">Edmond Onsare</p>
         <h1>Black Monster Model</h1>
         <p class="hero-meta"><span id="typed-role">Model | Model Judge | Event Organizer | Trainer & Team Builder</span></p>
-        <p class="hero-meta-secondary">Model | Model Judge | Event Organizer | Trainer | Team Builder</p>
+        
         <p class="hero-tagline">King of The Runway</p>
         <a href="#contact" class="btn btn-gold">Book Now</a>
       </div>
@@ -55,7 +57,25 @@
       </a>
     </section>
 
-    <section id="about" class="section about">
+    
+    <section id="stats" class="section stats-section">
+      <div class="container stats-grid reveal reveal-up">
+        <div class="stat-item">
+          <span class="stat-number auto-count" data-target="22">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">Events Judged</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number auto-count" data-target="18">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">Solo Titles Won</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number auto-count" data-target="6">0</span><span class="stat-plus">+</span>
+          <p class="stat-label">Years Active</p>
+        </div>
+      </div>
+    </section>
+    
+<section id="about" class="section about">
       <div class="container about-grid">
         <div class="about-image reveal reveal-left">
           <img src="assets/pictures/FASHION CAMPAIGN/DSC_2034.jpg" alt="Edmond Onsare editorial portrait" loading="lazy">
@@ -71,8 +91,8 @@
           <p><strong>Community Leadership:</strong> Founder of <strong>OKOA JAMII</strong>, a running organization focused on giving back and uplifting the community.</p>
           <p><strong>Industry Leadership:</strong> Chief Officer of Nairobi, Kenya (modeling industry leadership role).</p>
           <div class="about-badges">
-            <span>5+ Years Experience</span>
-            <span>100+ Models Trained</span>
+            <span><strong class="auto-count" data-target="5">0</strong>+ Years Experience</span>
+            <span><strong class="auto-count" data-target="100">0</strong>+ Models Trained</span>
             <span>National Event Judge</span>
             <span>Founder: Okoa Jamii</span>
           </div>
@@ -264,17 +284,19 @@
           <p class="kicker">Video Highlights</p>
           <h2>Motion Portfolio</h2>
         </div>
-        <div class="video-grid">
-          <video class="reveal reveal-up" controls preload="metadata" playsinline poster="assets/pictures/RUNWAY/DSC_8255.jpg">
-            <source src="assets/videos/eddy.mp4" type="video/mp4">
-          </video>
-          <video class="reveal reveal-up" controls preload="metadata" playsinline poster="assets/pictures/FASHION CAMPAIGN/DSC_2034.jpg">
-            <source src="assets/videos/highlight-1.mp4" type="video/mp4">
-          </video>
-          <video class="reveal reveal-up" controls preload="metadata" playsinline poster="assets/pictures/TEAM  BUILDING/DSC_5031.jpg">
-            <source src="assets/videos/highlight-2.mp4" type="video/mp4">
-          </video>
+        
+        <div class="tiktok-grid">
+          <div class="tiktok-embed-wrapper reveal reveal-up">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@blackmonster_9428/video/7438497645169495302" data-video-id="7438497645169495302"> <section> <a target="_blank" href="https://www.tiktok.com/@blackmonster_9428">@blackmonster_9428</a> </section> </blockquote> 
+          </div>
+          <div class="tiktok-embed-wrapper reveal reveal-up">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@blackmonster_9428/video/7438501235164895318" data-video-id="7438501235164895318"> <section> <a target="_blank" href="https://www.tiktok.com/@blackmonster_9428">@blackmonster_9428</a> </section> </blockquote> 
+          </div>
+          <div class="tiktok-embed-wrapper reveal reveal-up">
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@blackmonster_9428/video/7438502345164895318" data-video-id="7438502345164895318"> <section> <a target="_blank" href="https://www.tiktok.com/@blackmonster_9428">@blackmonster_9428</a> </section> </blockquote> 
+          </div>
         </div>
+    
       </div>
     </section>
 
@@ -375,13 +397,42 @@
           <p class="kicker">Services</p>
           <h2>Roles & Offerings</h2>
         </div>
-        <div class="services-grid">
-          <article class="service-card reveal reveal-up service-bg-1"><div class="service-icon">🎯</div><h3>Model</h3></article>
-          <article class="service-card reveal reveal-up service-bg-2"><div class="service-icon">⚖️</div><h3>Judge</h3></article>
-          <article class="service-card reveal reveal-up service-bg-3"><div class="service-icon">🎓</div><h3>Trainer</h3></article>
-          <article class="service-card reveal reveal-up service-bg-4"><div class="service-icon">📅</div><h3>Event Organizer</h3></article>
-          <article class="service-card reveal reveal-up service-bg-5"><div class="service-icon">🤝</div><h3>Team Builder</h3></article>
+        
+        <div class="services-row" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <article class="service-card reveal reveal-up service-bg-1" style="background: var(--card); padding: 2rem; border-radius: 8px; text-align: center;">
+            <div class="service-overlay-dark"></div>
+            <div class="service-icon" style="color: var(--gold); margin-bottom: 1rem;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            </div>
+            <h3>Model</h3>
+            <p style="color: var(--muted); font-size: 0.95rem;">Signature runway command, high fashion editorial presence, and consistent delivery on any stage.</p>
+          </article>
+          <article class="service-card reveal reveal-up service-bg-2" style="background: var(--card); padding: 2rem; border-radius: 8px; text-align: center;">
+            <div class="service-overlay-dark"></div>
+            <div class="service-icon" style="color: var(--gold); margin-bottom: 1rem;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><path d="M9 14l2 2 4-4"></path></svg>
+            </div>
+            <h3>Judge</h3>
+            <p style="color: var(--muted); font-size: 0.95rem;">Delivering fair, professional evaluation on confidence, posture, and performance potential at national events.</p>
+          </article>
+          <article class="service-card reveal reveal-up service-bg-3" style="background: var(--card); padding: 2rem; border-radius: 8px; text-align: center;">
+            <div class="service-overlay-dark"></div>
+            <div class="service-icon" style="color: var(--gold); margin-bottom: 1rem;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line><polyline points="8 10 12 6 16 10"></polyline><line x1="12" y1="6" x2="12" y2="14"></line></svg>
+            </div>
+            <h3>Trainer</h3>
+            <p style="color: var(--muted); font-size: 0.95rem;">Mentoring upcoming models on runway techniques, camera confidence, and professional industry conduct.</p>
+          </article>
+          <article class="service-card reveal reveal-up service-bg-4" style="background: var(--card); padding: 2rem; border-radius: 8px; text-align: center;">
+            <div class="service-overlay-dark"></div>
+            <div class="service-icon" style="color: var(--gold); margin-bottom: 1rem;">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <h3>Event Organizer</h3>
+            <p style="color: var(--muted); font-size: 0.95rem;">Producing premium talent showcases and managing teams for smooth, memorable fashion events.</p>
+          </article>
         </div>
+    
       </div>
     </section>
 
@@ -471,5 +522,6 @@
   </div>
 
   <script src="script.js"></script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
