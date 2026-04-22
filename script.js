@@ -215,3 +215,46 @@ if (countEls.length > 0) {
     });
     countEls.forEach(el => ob.observe(el));
 }
+
+// HORIZONTAL GALLERY AUTOSCROLL
+const gTracks = document.querySelectorAll('.gallery-track');
+let gDirs = [1, -1, 1]; // alternating directions
+let gPaused = false;
+let gSpeed = 1.2;
+
+// Auto-push the middle track to the right side so it scrolls left
+if(gTracks[1]) {
+    setTimeout(() => { gTracks[1].scrollLeft = gTracks[1].scrollWidth; }, 500);
+}
+
+function slideG() {
+    if (!gPaused) {
+        gTracks.forEach((track, i) => {
+            if (track.scrollWidth > track.clientWidth) {
+                track.scrollLeft += (gSpeed * gDirs[i]);
+                if (track.scrollLeft >= (track.scrollWidth - track.clientWidth - 1)) {
+                    gDirs[i] = -1;
+                } else if (track.scrollLeft <= 1) {
+                    gDirs[i] = 1;
+                }
+            }
+        });
+    }
+    requestAnimationFrame(slideG);
+}
+requestAnimationFrame(slideG);
+
+gTracks.forEach(t => {
+    t.addEventListener('mouseenter', () => gPaused = true);
+    t.addEventListener('mouseleave', () => gPaused = false);
+    
+    // Convert vertical mouse wheel to horizontal scroll inside these tracks
+    t.addEventListener('wheel', (e) => {
+        gPaused = true;
+        t.scrollLeft += e.deltaY * 2;
+        e.preventDefault();
+        // Resume auto scroll after scrolling
+        clearTimeout(t.resumeTimer);
+        t.resumeTimer = setTimeout(() => { gPaused = false; }, 1000);
+    });
+});
