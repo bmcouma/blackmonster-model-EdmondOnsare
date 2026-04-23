@@ -1,7 +1,2 @@
 # All files treated as binary, no LFS - GitHub Pages requires regular git objects
 * -text
-*.jpg !text !filter !merge !diff
-*.jpeg !text !filter !merge !diff
-*.png !text !filter !merge !diff
-*.mp4 !text !filter !merge !diff
-*.heic !text !filter !merge !diff
