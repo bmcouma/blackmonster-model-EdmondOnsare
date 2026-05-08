@@ -1,3 +1,9 @@
+# Development Utilities
+check_missing.js
+*.dev.js
+dev/
+tools/
+
 # Media files (large assets)
 *.mp4
 *.mov
@@ -26,22 +32,32 @@
 *.tar.gz
 *.tar.bz2
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# Backups & Temporary files
+*.bak
 *.tmp
 *.temp
-
-# IDE files
-.vscode/
-.idea/
+*~
 *.swp
 *.swo
 
-# Node modules (if any)
-node_modules/
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Logs
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+
+# Node modules & Package managers
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs & Debug
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -50,3 +66,9 @@ yarn-error.log*
 # Build outputs
 dist/
 build/
+.cache/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
